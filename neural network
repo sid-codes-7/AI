@@ -70,3 +70,8 @@ def update_params(W1, b1, W2, b2, dW1, db1, dW2, db2, alpha):
 # since each column is one image, the higher probability that is between 0-1 will predict that number
 def get_predictions(A2):
     return np.argmax(A2, 0)
+
+#accuracy of model = number of correct predictions / total predictions
+def get_accuracy(predictions, Y):
+    print(predictions, Y)
+    return np.sum(predictions == Y ) / Y.size
