@@ -1,0 +1,17 @@
+from transformers import AutoModelForCausalLM, AutoTokenizer
+
+# model from Hugging Face
+model_id = "Qwen/Qwen2.5-0.5B-Instruct"
+
+tokenizer = AutoTokenizer.from_pretrained(model_id)
+model = AutoModelForCausalLM.from_pretrained(model_id)
+
+print("Model successfully loaded!")
+
+while True:
+    user_q = input("What is your question? ")
+
+    if(user_q.lower() in ['q', 'quit', 'exit', 'close', 'bye', 'cya']):
+        print("Interrogration Ended.")
+        break
+
