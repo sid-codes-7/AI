@@ -1,6 +1,6 @@
 # === LOCAL AI MODEL ===
 
-from transformers import AutoModelForCausalLM, AutoTokenizer
+
 from transformers import AutoModelForCausalLM, AutoTokenizer, DynamicCache
 import torch
 
@@ -86,3 +86,20 @@ while True:
     #calculates the stress level of model by enhancing the chaos score by 500 and 100
     # as a celeing so the model doenst crash
     stress_level = min(int(chaos_score * 500), 100)
+
+    #the total length of stress bar
+    bar_length = 20
+
+    # fill the bar depending on how much stress it has as an integer
+    filled_length = int(bar_length * stress_level // 100)
+
+    #display the bar
+    bar = "█" * filled_length + "-" * (bar_length - filled_length)
+
+    print("\n📊 [ADVISOR MEMORY SCAN]")
+    print(f"   Stress Level: [{bar}] {stress_level}%")
+
+    if stress_level > 65:
+        print("   🚨 WARNING: High internal variance! Advisor is highly uncertain.")
+    else:
+        print("   ✅ STABLE: Low internal variance. Advisor response is confident.")
