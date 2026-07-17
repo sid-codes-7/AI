@@ -25,8 +25,9 @@ while True:
     #customization of ai to tell it what to do 
     messages = [
         {"role": "system", "content": "You are a university academic advisor. Help students with course requirements, schedules, and university policies based on official data."},
-        {"role": "user", "content": user_question}
+        {"role": "user", "content": user_q}
     ]
+
     
     #glue together the words into long piece of text so it is later converted with a tokenizer
     #takes the script and wraps it around special tags to tell it where it starts and ends
@@ -40,6 +41,7 @@ while True:
 
     #A brand new notebook that the model refers to the lastest info on the book
     kv_cache = DynamicCache()
+
 
 # === EXTRACT MEMORY TENSORS AFTER GENERATION ===
 
@@ -55,7 +57,17 @@ while True:
         pad_token_id = tokenizer.eos_token_id
     )
 
+    #get the length of all of the words to later slice the question out
     input_length = model_inputs.input_ids.shape[-1]
     
-# === CUSTOM LIE DETECTOR GAME LOGIC ===
+    #gets the first batch of numbers, and deletes the question parts
+    #translates it back into human words
+    #takes away any ugly formatting
+    advisor_reply = tokenizer.decode(output[0][input_length:], skip_special_tokens = True)
+
+    #print the advisors reply
+    print(f"Advisor:  {advisor_reply}")
+
+# === LIE DETECTOR GAME LOGIC ===
+
 
