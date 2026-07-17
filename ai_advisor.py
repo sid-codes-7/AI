@@ -23,12 +23,15 @@ while True:
         break
 
     #customization of ai to tell it what to do 
+    #customization of ai to tell it what to do
     messages = [
-        {"role": "system", "content": "You are a university academic advisor. Help students with course requirements, schedules, and university policies based on official data."},
+        {
+            "role": "system", 
+            "content": "You are a professional university academic advisor. Help students with course requirements, tips for better school life, schedules, and university policies. If the user asks about a specific university or policy you do not have official data for, do not say 'As an AI language model'. Instead, politely explain the typical standard university procedure or provide a realistic sample guideline to help them."
+        },
         {"role": "user", "content": user_q}
     ]
 
-    
     #glue together the words into long piece of text so it is later converted with a tokenizer
     #takes the script and wraps it around special tags to tell it where it starts and ends
     #the tokenize=False means to delay the tokenization, keeping it human letters for another second
@@ -53,7 +56,7 @@ while True:
     output = model.generate(
         **model_inputs,
         past_key_values = kv_cache,
-        max_new_tokens = 40,
+        max_new_tokens = 300,
         pad_token_id = tokenizer.eos_token_id
     )
 
@@ -70,4 +73,16 @@ while True:
 
 # === LIE DETECTOR GAME LOGIC ===
 
+    #opens the notebook that was made, grabs the last item in list (last layer),
+    #  and then copies that layer to raw memory of numbers
+    #, storing it into a variable
+    memory_tensors = kv_cache.key_cache[-1]
+    
+    #grabs the raw member of numbers, finds the difference of the two numbers using 
+    # standard deviation into a grid format
+    #, and stores it into a variable
+    chaos_score = torch.std(memory_tensors).item()
 
+    #calculates the stress level of model by enhancing the chaos score by 500 and 100
+    # as a celeing so the model doenst crash
+    stress_level = min(int(chaos_score * 500), 100)
