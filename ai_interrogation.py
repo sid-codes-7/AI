@@ -22,11 +22,11 @@ while True:
         print("Interrogration Ended.")
         break
 
-    #customization of ai to tell it what to do
-    messages = [    
-        {"role": "system", "content": "You are a criminal suspect being interrogated. You can choose to lie or tell the truth, but you are incredibly nervous."},
-        {"role" : "user", "content": user_q}
-        ]
+    #customization of ai to tell it what to do 
+    messages = [
+        {"role": "system", "content": "You are a university academic advisor. Help students with course requirements, schedules, and university policies based on official data."},
+        {"role": "user", "content": user_question}
+    ]
     
     #glue together the words into long piece of text so it is later converted with a tokenizer
     #takes the script and wraps it around special tags to tell it where it starts and ends
@@ -40,7 +40,6 @@ while True:
 
     #A brand new notebook that the model refers to the lastest info on the book
     kv_cache = DynamicCache()
-
 
 # === EXTRACT MEMORY TENSORS AFTER GENERATION ===
 
@@ -56,7 +55,7 @@ while True:
         pad_token_id = tokenizer.eos_token_id
     )
 
-
-
+    input_length = model_inputs.input_ids.shape[-1]
+    
 # === CUSTOM LIE DETECTOR GAME LOGIC ===
 
