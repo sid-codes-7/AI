@@ -1,14 +1,21 @@
-import tensorflow as tf
-import kagglehub
 import os
+import numpy as np
+import matplotlib.pyplot as plt
+import tensorflow as tf
 
-model_path = "/kaggle/input/models/wafaaelhusseini/cats-vs-dogs-classifier/tensorflow2/fine-tuned-mobilenetv2/1/"
+from PIL import Image, UnidentifiedImageError
 
-#connect the path directly to the model
-file_complete_path = os.path.join(model_path, 'cats_dogs_finetuned_FT.keras')
 
-# load the model using standard Keras 3
-model = tf.keras.models.load_model(file_complete_path)
+# ============================================================
+# 1. PATHS
+# ============================================================
 
-print("Model successfully wrapped and loaded in Keras 3")
-model.summary()
+# Folder containing the three saved Cats vs Dogs models
+MODEL_DIRECTORY = (
+    "/kaggle/input/models/"
+    "wafaaelhusseini/cats-vs-dogs-classifier/"
+    "tensorflow2/fine-tuned-mobilenetv2/1"
+)
+
+# Search all Kaggle datasets for the individual cat and dog images
+IMAGE_DIRECTORY = "/kaggle/input/datasets"
