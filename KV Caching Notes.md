@@ -33,4 +33,22 @@ By:
 
 
 ## 1. concatenating key and value vectors
+For example, if a token has:
 
+K = [1, 2]
+
+And another token has:
+
+V = [3, 4]
+
+Concatenation:
+
+[K;V] = [1, 2, 3, 4]
+
+Upside:
+
+Lets the classifier see both what kind of information the token represents and the contained information that might be used.
+
+Downside:
+
+The vector becomes larger.
