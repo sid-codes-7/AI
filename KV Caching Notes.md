@@ -52,3 +52,6 @@ Lets the classifier see both what kind of information the token represents and t
 Downside:
 
 The vector becomes larger.
+
+## 2. averaging across layers
+
