@@ -21,3 +21,16 @@ What information the previous token contains.
 ## Value:
 
 The information from a previous token that is weighted and combined with the values from all other previous tokens.
+----------------------------------------
+https://openreview.net/pdf?id=XM31M3uSUU
+
+This paper explains how tokens in KV Caches can be summarized. 
+By:
+1. concatenating key and value vectors
+2. averaging across layers
+3. combining the information across attention heads
+4. combining the information across token positions
+
+
+## 1. concatenating key and value vectors
+
