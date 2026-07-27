@@ -105,3 +105,13 @@ etc.
 
 then combines and averages them
 
+for example, it selects:
+
+dogs = [6, 4]
+at = [2, 3]
+dog = [1, 4]
+park = [2, 5]
+
+then will average them to get [3, 4]
+
+
