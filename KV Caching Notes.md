@@ -56,5 +56,10 @@ The vector becomes larger.
 ## 2. averaging across layers
 Why? The same token has different key and value vectors in every layer
 
+for example, **France** has 3 vectors
+
+V1 = [2,4]
+V2 = [4,8]
+V3 = [6,3]
 
 
