@@ -95,3 +95,13 @@ Say if the prompt is for these tokens:
 The | dog | met | other | dogs | at | the | dog | park | . |
 The model assigns a key and value vector for each token
 
+The summarizer might select:
+
+the most recent token,
+first token, 
+previous token,
+special tokens,
+etc.
+
+then combines and averages them
+
