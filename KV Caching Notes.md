@@ -67,5 +67,5 @@ The system will average the vectors:
 
 [4,5] becomes a summarized vector.
 
-
-
+Each of the layers catches different levels of information 
+The downside is that some information in specific layers is lost.
