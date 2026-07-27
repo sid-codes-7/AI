@@ -85,4 +85,6 @@ H2 = [5,1]
 H3 = [2,8]
 
 
+The attention heads can be averaged or merged/concatenated.
 
+This is because the classifier needs an overview of the information instead of dozens of separate head outputs.
