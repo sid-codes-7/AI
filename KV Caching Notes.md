@@ -78,3 +78,11 @@ attention heads, for example, can focus on:
 - grammar
 - connection of words
 
+suppose one token has 3 attention heads
+
+H1 = [1,3]
+H2 = [5,1]
+H3 = [2,8]
+
+
+
