@@ -69,3 +69,7 @@ The system will average the vectors:
 
 Each of the layers catches different levels of information 
 The downside is that some information in specific layers is lost.
+
+## 3. combining information across attention heads
+each transformer layer has several attention heads
+
