@@ -114,4 +114,8 @@ park = [2, 5]
 
 then will average them to get [3, 4]
 
-
+Why not use every token?
+1. There will be thousands of tokens
+2. Increase the # of unnecessary tokens
+3. Slower processing speeds
+4. Selecting specific positions can make the classifier faster
