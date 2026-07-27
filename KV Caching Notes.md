@@ -73,3 +73,8 @@ The downside is that some information in specific layers is lost.
 ## 3. combining information across attention heads
 each transformer layer has several attention heads
 
+attention heads, for example, can focus on:
+- nearby words
+- grammar
+- connection of words
+
