@@ -78,7 +78,7 @@ attention heads, for example, can focus on:
 - grammar
 - connection of words
 
-suppose one token has 3 attention heads
+Suppose one token has 3 attention heads
 
 H1 = [1,3]
 H2 = [5,1]
@@ -88,3 +88,10 @@ H3 = [2,8]
 The attention heads can be averaged or merged/concatenated.
 
 This is because the classifier needs an overview of the information instead of dozens of separate head outputs.
+
+## 4. combining the information across token positions
+Say if the prompt is for these tokens:
+
+The | dog | met | other | dogs | at | the | dog | park | . |
+The model assigns a key and value vector for each token
+
