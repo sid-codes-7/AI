@@ -54,4 +54,7 @@ Downside:
 The vector becomes larger.
 
 ## 2. averaging across layers
+Why? The same token has different key and value vectors in every layer
+
+
 
