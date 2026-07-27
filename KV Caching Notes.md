@@ -62,4 +62,10 @@ V1 = [2,4]
 V2 = [4,8]
 V3 = [6,3]
 
+The system will average the vectors:
+( [2,4] + [4,8] + [6,3] ) / 3 = [4,5]
+
+[4,5] becomes a summarized vector.
+
+
 
