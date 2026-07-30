@@ -131,3 +131,5 @@ Layer 2 = key and value vectors
 Layer 3 = key and value vectors
 ...
 Layer 32 = key and value vectors
+
+More layers mean more key and value vectors need to be stored, increasing the KV Cache size.
