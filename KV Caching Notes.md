@@ -122,3 +122,12 @@ Why not use every token?
 
 # KV Cache Size Formula:
 KV cache bytes = L × T × H_KV × D × 2 × B × N
+
+- L: Number of Layers
+Each transformer layer stores its own key and value vectors.
+For example, if a model has 32 layers:
+Layer 1 = key and value vectors
+Layer 2 = key and value vectors
+Layer 3 = key and value vectors
+...
+Layer 32 = key and value vectors
