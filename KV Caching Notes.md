@@ -140,3 +140,10 @@ For example:
 
 Prompt = 1,000 tokens
 Generated response = 500 tokens
+
+Total tokens stored in the KV Cache = 1,500 tokens
+
+As the number of tokens increases, the KV Cache size also increases.
+
+For example:
+2× more tokens = around 2× more KV Cache memory
