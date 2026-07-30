@@ -119,3 +119,8 @@ Why not use every token?
 2. Increase the # of unnecessary tokens
 3. Slower processing speeds
 4. Selecting specific positions can make the classifier faster
+
+# KV Cache Size Formula:
+
+KV cache bytes = L×T×HKV​×D×2×B×N
+
