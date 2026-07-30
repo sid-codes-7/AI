@@ -147,3 +147,8 @@ As the number of tokens increases, the KV Cache size also increases.
 
 For example:
 2× more tokens = around 2× more KV Cache memory
+
+- H_KV: Number of KV Heads
+H_KV represents the number of key and value heads in each transformer layer.
+
+A model can have many query heads but fewer KV heads.
