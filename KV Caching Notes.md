@@ -121,6 +121,4 @@ Why not use every token?
 4. Selecting specific positions can make the classifier faster
 
 # KV Cache Size Formula:
-
-KV cache bytes = L×T×HKV​×D×2×B×N
-
+KV cache bytes = L × T × H_KV × D × 2 × B × N
